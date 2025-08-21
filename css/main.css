@@ -754,7 +754,7 @@ p {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', sans-serif;
     font-weight: 500;
     letter-spacing: 0.5px;
     line-height: 1.5;
@@ -1043,6 +1043,8 @@ p {
     margin-bottom: 2rem;
     font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', sans-serif;
     font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
 }
 
 .contact-email {
