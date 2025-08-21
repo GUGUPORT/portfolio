@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layers.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div class="portfolio-container" id="portfolioContainer">
+        <!-- 3D 배경 레이어들 -->
+        <div class="background-layers">
+            <div class="bg-layer-1"></div>
+            <div class="bg-layer-3"></div>
+            <div class="bg-layer-5"></div>
+        </div>
+
+        <div class="layers-wrapper" id="layersWrapper">
+            <!-- Layer 1: 2번 이미지 -->
+            <div class="layer layer-1" data-layer="1">
+                <div class="layer-content">
+                    <img src="art/2.png" alt="Layer 1 Image" class="layer-image">
+                </div>
+            </div>
+
+            <!-- Layer 2: 4번 이미지 (흔들림) -->
+            <div class="layer layer-2" data-layer="2">
+                <div class="layer-content">
+                    <img src="art/4.png" alt="Layer 2 Image" class="layer-image">
+                </div>
+            </div>
+        </div>
+
+        <!-- 포트폴리오 제목 -->
+        <div class="portfolio-title">
+            <h1 class="title-vertical" aria-label="Portfolio Title">
+                <span class="title-line title-1">YU HYUNE</span>
+                <span class="title-line title-2">PORTFOLIO</span>
+            </h1>
+        </div>
+
+        <!-- 스크롤 화살표 -->
+        <div class="scroll-arrow">
+            <div class="arrow-down"></div>
+        </div>
+    </div>
+
+    <!-- 이미지 갤러리 섹션 -->
+    <section class="gallery-section" id="gallerySection">
+        <div class="gallery-container">
+            <h2>포트폴리오 갤러리</h2>
+            <p>그래픽 디자인, 픽셀아트 등</p>
+            <p>다양한 프로젝트를 확인해보세요</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('modal1')">
+                    <img src="art/port/p4.png" alt="모바일 앱 푸쉬" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>모바일 앱 푸쉬</h3>
+                        <p>모바일 앱 푸쉬 알림 마케팅</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="openModal('modal2')">
+                    <img src="art/port/p5.png" alt="목업 디자인" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>목업 디자인</h3>
+                        <p>제품 목업 디자인 작업</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="openModal('modal3')">
+                    <img src="art/port/p6.png" alt="상세페이지 샘플" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>상세페이지 샘플</h3>
+                        <p>웹 상세페이지 디자인</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="openModal('modal4')">
+                    <img src="art/port/p1.png" alt="2D 작품" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>2D</h3>
+                        <p>2D 디자인 작품</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="openModal('modal5')">
+                    <img src="art/port/p2.png" alt="3D 작품" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>3D</h3>
+                        <p>3D 모델링 작품들</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="openModal('modal6')">
+                    <img src="art/port/e1.gif" alt="픽셀, 이모티콘" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>픽셀, 이모티콘</h3>
+                        <p>픽셀아트와 이모티콘 작품들</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 컨택 섹션 -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <h2>Contact</h2>
+            <p>프로젝트 문의나 제안이 있으시면 연락주세요</p>
+            <div class="contact-email">
+                <button onclick="copyEmail()" id="emailBtn">slovels@naver.com</button>
+                <div id="copyNotification" class="copy-notification">이메일이 복사되었습니다!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 모달 팝업들 -->
+    <!-- 모달 1: 모바일 앱 푸쉬 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h3>모바일 앱 푸쉬</h3>
+            <div class="modal-images">
+                <img src="art/port/p4.png" alt="모바일 앱 푸쉬">
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 2: 목업 디자인 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h3>목업 디자인</h3>
+            <div class="modal-images">
+                <img src="art/port/p5.png" alt="목업 디자인">
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 3: 상세페이지 샘플 -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h3>상세페이지 샘플</h3>
+            <div class="modal-images">
+                <img src="art/port/p6.png" alt="상세페이지 샘플">
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 4: 2D -->
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h3>2D</h3>
+            <div class="modal-images">
+                <img src="art/port/p1.png" alt="2D 작품">
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 5: 3D -->
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h3>3D</h3>
+            <div class="modal-images">
+                <img src="art/port/p2.png" alt="3D 작품 1">
+                <img src="art/port/p3.png" alt="3D 작품 2">
+                <img src="art/port/p7.png" alt="3D 작품 3">
+                <img src="art/port/p0.png" alt="3D 작품 4">
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 6: 픽셀, 이모티콘 -->
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <h3>픽셀, 이모티콘</h3>
+            <div class="modal-section">
+                <h4>이모티콘</h4>
+                <div class="modal-images emoji-grid">
+                    <img src="art/port/e1.gif" alt="이모티콘 1">
+                    <img src="art/port/e6.gif" alt="이모티콘 2">
+                    <img src="art/port/e22.gif" alt="이모티콘 3">
+                    <img src="art/port/e7.gif" alt="이모티콘 4">
+                </div>
+                <h4>픽셀아트</h4>
+                <div class="modal-images pixel-grid">
+                    <img src="art/port/image1.gif" alt="픽셀아트 1">
+                    <img src="art/port/image6.gif" alt="픽셀아트 2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- main.js만 비활성화, 다른 JavaScript는 활성화 -->
+    <script src="js/rotation-controller.js"></script>
+    <script src="js/layer-manager.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+    
+    <script>
+    (function(){
+      const root = document.querySelector('.title-vertical');
+      if(!root) return;
+      const line1 = root.querySelector('.title-1');
+      const line2 = root.querySelector('.title-2');
+
+      function fitLines(){
+        if(!line1 || !line2) return;
+        // 초기화 후 실제 폭 측정
+        line1.style.setProperty('--sx', 1);
+        line2.style.setProperty('--sx', 1);
+
+        // 강제 리플로우 뒤 폭 측정
+        const w1 = line1.getBoundingClientRect().width;
+        const w2 = line2.getBoundingClientRect().width;
+        const maxW = Math.max(w1, w2);
+
+        // 더 짧은 쪽만 scaleX로 늘려 동일 폭으로
+        const s1 = maxW / w1;
+        const s2 = maxW / w2;
+        if (s1 > 1.0001) line1.style.setProperty('--sx', s1);
+        if (s2 > 1.0001) line2.style.setProperty('--sx', s2);
+      }
+
+      // 최초/리사이즈/폰트로드 시 맞춤
+      window.addEventListener('load', fitLines);
+      window.addEventListener('resize', (()=> {
+        let t; 
+        return ()=>{ clearTimeout(t); t=setTimeout(fitLines, 80); };
+      })());
+
+      // 폰트 로딩 변화 대응
+      if ('fonts' in document) {
+        document.fonts.ready.then(fitLines);
+      }
+    })();
+    
+    // 모달 팝업 기능
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'flex';
+        setTimeout(() => {
+            modal.classList.add('show');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+    
+    // 모달 외부 클릭 시 닫기
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            const modalId = event.target.id;
+            closeModal(modalId);
+        }
+    }
+    
+    // ESC 키로 모달 닫기
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const openModal = document.querySelector('.modal.show');
+            if (openModal) {
+                closeModal(openModal.id);
+            }
+        }
+    });
+    
+    // 이메일 복사 기능
+    function copyEmail() {
+        const email = 'slovels@naver.com';
+        const notification = document.getElementById('copyNotification');
+        
+        navigator.clipboard.writeText(email).then(function() {
+            // 복사 성공
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 2000);
+        }).catch(function(err) {
+            // 복사 실패 시 fallback
+            const textArea = document.createElement('textarea');
+            textArea.value = email;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 2000);
+        });
+    }
+    </script>
+    
+</body>
+</html>
