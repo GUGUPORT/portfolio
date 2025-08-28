@@ -1,4 +1,4 @@
-name: Deploy to Public Pages Repo
+name: Deploy Static Site
 
 on:
   push:
@@ -6,45 +6,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout private source
         uses: actions/checkout@v4
 
-      - name: Set up Node
-        if: hashFiles('package.json') != ''
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install deps
-        if: hashFiles('package.json') != ''
-        run: npm ci || npm install
-
-      - name: Build
-        if: hashFiles('package.json') != ''
-        run: npm run build || echo "skip build"
-
-      - name: Detect publish dir
-        id: detect
-        run: |
-          if [ -d dist ]; then
-            echo "dir=dist" >> $GITHUB_OUTPUT
-          elif [ -d build ]; then
-            echo "dir=build" >> $GITHUB_OUTPUT
-          else
-            echo "dir=." >> $GITHUB_OUTPUT
-          fi
-
-      - name: Push to public repo
+      - name: Push ONLY public/ to public repo
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           external_repository: GUGUPORT/portfolio
           publish_branch: main
-          publish_dir: ${{ steps.detect.outputs.dir }}
+          publish_dir: public     # ← 공개용 폴더만 배포
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
           force_orphan: true
