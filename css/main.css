@@ -957,6 +957,24 @@ p {
     margin: 0 auto;
 }
 
+/* 텍스타일 디자인 모달 - 3개씩 픽셀그리드 */
+#modalTextile .modal-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#modalTextile .modal-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    object-fit: cover;
+}
+
+
 /* 픽셀, 이모티콘 모달 */
 .modal-section {
     text-align: center;
