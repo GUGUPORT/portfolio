@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/layers.css">
     <link rel="stylesheet" href="css/animations.css">
+
+    <style>
+        .ai-fashion-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+
+        .ai-fashion-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="portfolio-container" id="portfolioContainer">
@@ -59,7 +75,7 @@
                     <img src="art/port/1.png" alt="AI 모델 의상합성" class="gallery-image">
                     <div class="gallery-overlay">
                         <h3>AI 모델 의상합성</h3>
-                        <p>AI 유아/키즈 모델 기반 의상 합성 및 상세페이지용 이미지 작업</p>
+                        <p>AI 모델 기반 의상 합성 및 상세페이지용 이미지 작업</p>
                     </div>
                 </div>
 
@@ -135,20 +151,18 @@
     </section>
 
     <!-- 모달 팝업들 -->
-
 	
     <!-- 모달 AI 모델 의상합성 -->
     <div id="modalAiFashion" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modalAiFashion')">&times;</span>
             <h3>AI 모델 의상합성</h3>
-            <div class="modal-images">
-                <img src="art/port/ai02.png" alt="AI 모델 의상합성 1">
-                <img src="art/port/ai03.png" alt="AI 모델 의상합성 2">
-                <img src="art/port/ai04.png" alt="AI 모델 의상합성 3">
-                <img src="art/port/ai1.png" alt="AI 모델 의상합성 4">
-                <img src="art/port/ai2.png" alt="AI 모델 의상합성 5">
-                <img src="art/port/ai3.png" alt="AI 모델 의상합성 6">
+            <div class="modal-images ai-fashion-grid">
+                <img src="art/port/ai1.png" alt="AI 모델 의상합성 1">
+                <img src="art/port/ai2.png" alt="AI 모델 의상합성 2">
+                <img src="art/port/ai03.png" alt="AI 모델 의상합성 3">
+                <img src="art/port/ai3.png" alt="AI 모델 의상합성 4">
+                <img src="art/port/ai04.png" alt="AI 모델 의상합성 5">
             </div>
         </div>
     </div>
