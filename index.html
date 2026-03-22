@@ -55,13 +55,21 @@
             <p>다양한 프로젝트를 확인해보세요</p>
             
             <div class="gallery-grid">
-				<div class="gallery-item" onclick="openModal('modalTextile')">
-					<img src="art/port/a1.jpg" alt="텍스타일 프린트 디자인" class="gallery-image">
-					<div class="gallery-overlay">
-					<h3>텍스타일 프린트 디자인</h3>
-					<p>유아복 심리스 패턴 디자인 목업 샘플</p>
-					</div>
-				</div>
+                <div class="gallery-item" onclick="openModal('modalAiFashion')">
+                    <img src="art/port/1.png" alt="AI 모델 의상합성" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>AI 모델 의상합성</h3>
+                        <p>AI 유아/키즈 모델 기반 의상 합성 및 상세페이지용 이미지 작업</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openModal('modalTextile')">
+                    <img src="art/port/a1.jpg" alt="텍스타일 프린트 디자인" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>텍스타일 프린트 디자인</h3>
+                        <p>유아복 심리스 패턴 디자인 목업 샘플</p>
+                    </div>
+                </div>
 
                 <div class="gallery-item" onclick="openModal('modal1')">
                     <img src="art/port/p4.png" alt="모바일 앱 푸쉬" class="gallery-image">
@@ -128,6 +136,22 @@
 
     <!-- 모달 팝업들 -->
 	
+    <!-- 모달 AI 모델 의상합성 -->
+    <div id="modalAiFashion" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalAiFashion')">&times;</span>
+            <h3>AI 모델 의상합성</h3>
+            <div class="modal-images">
+                <img src="art/port/1.png" alt="AI 모델 의상합성 1">
+                <img src="art/port/2.png" alt="AI 모델 의상합성 2">
+                <img src="art/port/3.png" alt="AI 모델 의상합성 3">
+                <img src="art/port/0-2.png" alt="AI 모델 의상합성 4">
+                <img src="art/port/0-3.png" alt="AI 모델 의상합성 5">
+                <img src="art/port/0-4.png" alt="AI 모델 의상합성 6">
+            </div>
+        </div>
+    </div>
+
 	<!-- 모달 Textile Print Design -->
 	<div id="modalTextile" class="modal">
 		<div class="modal-content">
